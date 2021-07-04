@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import PostList from "./PostList";
-import Search from "./Search";
-import PaginationList from "./PaginationList";
+import PostList from "../components/Pagination/PostList";
+import Search from "../components/Pagination/Search";
+import PaginationList from "../components/Pagination/PaginationList";
 import axios from "axios";
 import queryString from "query-string";
 export default {

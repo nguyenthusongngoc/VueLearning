@@ -1,24 +1,12 @@
 <template>
   <div id="app">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <!-- <Basic/> -->
-    <Pagination />
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/pagination">Pagination</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
-
-<script>
-// import HelloWorld from './components/HelloWorld.vue'
-// import Basic from './components/Basic.vue'
-import Pagination from "./components/Pagiantion/Pagination.vue";
-export default {
-  name: "App",
-  components: {
-    Pagination,
-    // HelloWorld,
-    // Basic
-  },
-};
-</script>
 
 <style>
 #app {
@@ -27,6 +15,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

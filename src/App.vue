@@ -1,22 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <Basic/>
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <!-- <Basic/> -->
+    <Pagination />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Basic from './components/Basic.vue'
-
+// import HelloWorld from './components/HelloWorld.vue'
+// import Basic from './components/Basic.vue'
+import Pagination from "./components/Pagiantion/Pagination.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld,
-    Basic
-  }
-}
+    Pagination,
+    // HelloWorld,
+    // Basic
+  },
+};
 </script>
 
 <style>

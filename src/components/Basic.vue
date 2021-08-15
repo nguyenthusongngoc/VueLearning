@@ -32,6 +32,7 @@
       <Todo v-for="(todo, index) in todos" :key="index" :todoData="todo" />
     </div>
     <p>{{ price | formatPrice }}</p>
+    <p>{{ fullName }}</p>
   </div>
 </template>
 
@@ -40,6 +41,7 @@ import Todo from "./Todo";
 export default {
   name: "Basic",
   data() {
+    // state
     return {
       name: "ngoc nguyen",
       isShow: "true",
@@ -62,7 +64,7 @@ export default {
     };
   },
   methods: {
-    // like class OOP
+    // like class OOP function
     handleSubmit() {
       if (this.newHobby) {
         this.todos.push({
@@ -74,19 +76,28 @@ export default {
     },
   },
   filters: {
-    //pipe của Angular
+    //pipe của Angular -> format value trước khi render lên DOM
     formatPrice(price) {
       return price + 2;
     },
   },
   watch: {
-    // theo dõi sự thay đổi của data và sẽ thực hiện function thường dùng cho phan trang, validate
+    // theo dõi sự thay đổi của data và sẽ thực hiện function thường dùng cho phan trang, validate, search,...
+    // Kiểu làm các sự kiện onchange của value
     newHobby(newValue, oldValue) {
       console.log("is updated", oldValue);
       console.log("is updated", newValue);
     },
   },
+  computed: {
+    // tương tự watch thay nhưng sẽ tạo mới 1 biến bằng cách nó sẽ return về 1 value mới
+    // Có thể dùng methods để tạo giá trị nhưng sẽ phải tạo biến
+    fullName() {
+      return this.arrayName[0] + " " + this.arrayName[1];
+    },
+  },
   //life cycle
+  created() {},
   mounted() {},
   beforeUpdate() {},
   updated() {},
